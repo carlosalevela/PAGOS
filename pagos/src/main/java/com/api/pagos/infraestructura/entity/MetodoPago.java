@@ -1,16 +1,21 @@
 package com.api.pagos.infraestructura.entity;
 
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "metodos_pago") 
 public class MetodoPago {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long metodoPagoId;
+
     private String name;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaActualizacion;
 
     public MetodoPago() {
     }
-
 
     public MetodoPago(Long metodoPagoId, String name, LocalDateTime fechaCreacion, LocalDateTime fechaActualizacion) {
         this.metodoPagoId = metodoPagoId;
